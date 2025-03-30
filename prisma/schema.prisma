@@ -12,3 +12,18 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Principle {
+  id          String   @id @default(cuid())
+  title       String
+  description String? // Optional description
+  axis        String // e.g., "Inner", "Relational", "Navigational"
+  category    String // e.g., "Core Introspection", "Adaptive Transmission"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Add relations later if needed
+  // reflections Reflection[]
+}
+
+// Add more models like Reflection later
