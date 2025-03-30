@@ -32,6 +32,11 @@
     "jest-environment-jsdom": "^29.7.0",
     "tailwindcss": "^4",
     "ts-jest": "^29.3.0",
-    "typescript": "^5.8.2"
-  }
+    "typescript": "^5.8.2",
+    "nx": "20.6.4",
+    "@nx/eslint": "20.6.4",
+    "@nx/jest": "20.6.4",
+    "@nx/next": "20.6.4"
+  },
+  "nx": {}
 }

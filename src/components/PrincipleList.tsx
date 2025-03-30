@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { useUiStore } from '@/store/uiStore'; // Adjust path if needed
 
 // Define an interface for the Principle data structure
 // based on the Prisma model and API response
@@ -18,6 +19,12 @@ const PrincipleList: React.FC = () => {
   const [principles, setPrinciples] = useState<Principle[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const { isLoading, setLoading: setUiLoading } = useUiStore((state) => ({
+    isLoading: state.isLoading,
+    setLoading: state.setLoading,
+  }));
+
+  console.log(isLoading, setUiLoading);
 
   useEffect(() => {
     const fetchPrinciples = async () => {
